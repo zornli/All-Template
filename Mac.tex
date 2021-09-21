@@ -1,0 +1,214 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt,a4paper,twoside]{article}
+\usepackage[top=1.7cm,bottom=1.2cm,left=2.8cm,right=2.3cm,includehead,includefoot]{geometry}
+%\geometry{letterpaper}
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+
+\usepackage{fancyhdr}         
+\usepackage{indentfirst}           
+
+\usepackage{amsmath}               
+\usepackage{amssymb}                   % AMSLaTeX\usepackage{amsfonts}                  % AMSLaTeX
+\usepackage[amsmath,thmmarks]{ntheorem}% AMSLaTeX
+
+\usepackage{graphicx}                  %
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{picinpar} 
+
+\usepackage{mathrsfs}               %\mathcal or \mathfrak 
+
+\usepackage{color}                 
+\definecolor{Gold}{rgb}{1.00, 0.84, 0.00}    
+\definecolor{Orange}{rgb}{1.00, 0.65, 0.00}
+
+\usepackage[colorlinks]{hyperref}   
+\setlength{\topsep}{-16pt }                        %\setlength{\partopsep}{2pt plus0pt minus2pt}        % 
+\setlength{\itemsep}{-16pt }                        % \setlength{\floatsep}{10pt plus 3pt minus 2pt}      % 
+\setlength{\abovecaptionskip}{2pt plus1pt minus1pt} % 
+\setlength{\belowcaptionskip}{3pt plus1pt minus2pt} % 
+\setlength{\floatsep}{10pt plus 3pt minus 2pt}
+\setlength{\parindent}{2em}                         % 
+\setlength{\parskip}{2pt plus1pt minus1pt}          % 
+\renewcommand{\baselinestretch}{1.2}                % 
+
+
+
+%%=========================================================================%%==================================%
+\bibliographystyle{plain}         
+%=================
+\makeatletter                                                                                                 
+\def\@cite#1#2{\textsuperscript{[{#1\if@tempswa,#2\fi}]}}
+\makeatother
+%==============================================================================================================
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+
+
+
+\setromanfont{Songti SC Regular} %设置中文字体
+\XeTeXlinebreaklocale “zh”
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt %文章内中文自动换行
+
+\newfontfamily{\H}{Hei}
+\newfontfamily{\K}{Kai}
+\newfontfamily{\F}{FangSong}
+\newfontfamily{\E}{Arial}
+
+\title{\H 算法设计}
+\author{Donald}
+%\date{\E\today}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+
+\theoremstyle{plain}
+\theoremheaderfont{\setromanfont{Hei}}
+\theorembodyfont{\setromanfont{Kai}} \theoremindent0em
+\theoremseparator{\hspace{1em}} \theoremnumbering{arabic}
+\theoremsymbol{} 
+\newtheorem{theorem}{\hspace{2em}定理}
+\newtheorem{definition}{\hspace{2em}定义}
+\newtheorem{lemma}{\hspace{2em}引理}
+\newtheorem{corollary}{\hspace{2em}推论}
+
+\newcommand{\ET}{\mathcal{T}}     
+\newcommand{\ES}{\mathcal{S}}
+\newcommand{\EN}{\mathcal{N}}
+\newcommand{\EI}{\mathcal{I}}
+\newcommand{\EF}{\mathcal{F}}
+\newcommand{\HF}{\mathscr{F}} 
+
+\renewcommand\refname{\small \H 参考文献}         
+\renewcommand\tablename{\small \H 表}
+
+\pagestyle{fancy}
+\fancyhead{}                                   
+\fancyhead[CE]{ }                              
+\fancyhead[CO]{{\small 页眉文字}}   
+\fancyhead[RO]{\thepage}          
+\fancyhead[LE]{\thepage}           
+\fancyfoot[C]{}   
+
+\renewcommand{\headrulewidth}{0.4pt}      
+\addtolength{\headsep}{-1em}                
+\sloppy    
+
+\begin{quote}\small
+{\H\quad 摘~~~要:}
+          {\K 中文\LaTeX{}
+                 }
+
+ {\H \quad 关键词:} { \LaTeX{}; \TeX{}; $\mathbb{C}$\!\TeX{}}
+\end{quote}
+
+\noindent\hspace*{5cm} \hrulefill \hspace*{5cm}\\    
+
+%\vspace{-0.8cm}
+             
+
+这个段落中，夹杂着一个{\E word}。
+{\K 看看效果}。{ \F 仿宋。}
+
+
+\begin{definition}[中文]\label{def:dubois} % 
+{\begin{eqnarray}
+ \begin{split}
+ \mu_{\underline{\Re}\mathcal {F}}\left( x\right)
+      &= \inf\left\{\max \left[ \mu _{\HF} \left( y \right),1 - \mu_\Re\left(x,y\right) \right]\bigm| y \in U  \right\} \\
+ \mu_{\overline{\Re}\mathcal {F}}\left( x\right)
+      &= \sup\left\{{\min \left[ \mu _{\HF} \left( y \right),\mu_\Re\left(x,y\right) \right]\bigm| y \in U}\right\}
+ \end{split}
+\end{eqnarray}\label{eq:dubois1}}
+\end{definition}
+
+\begin{definition}[中文定义]
+
+中文$\left( U,\Re \right)$看看$\Re$中文$U$看看 $\forall
+\EF\in\HF(U)$以及$\EF$很好 $\left(U,\Re\right)$ 看啊困难
+$\underline{\Re}\mathcal {F}$什么$\overline{\Re}\mathcal
+{F}$以及$U$继续
+ {\begin{eqnarray}
+ \begin{split}
+ \mu_{\underline{\Re}\mathcal {F}}\left( x\right)
+      &= \inf\left\{\max \left[ \mu _{\HF} \left( y \right),1 - \mu_\Re\left(x,y\right) \right]\bigm| y \in U  \right\} \\
+ \mu_{\overline{\Re}\mathcal {F}}\left( x\right)
+      &= \sup\left\{{\min \left[ \mu _{\HF} \left( y \right),\mu_\Re\left(x,y\right) \right]\bigm| y \in U}\right\}
+ \end{split}
+\end{eqnarray}\label{eq:dubois1}}
+
+\end{definition}
+
+
+\clearpage1
+
+\section{\F 第一部分}
+
+文章
+
+\clearpage
+
+看看效果。\cite{Biswas}
+
+
+\begin{thebibliography}{10}
+
+\scriptsize \addtolength{\itemsep}{-1.0em}    
+
+
+\bibitem{IntuitionisticFuzzySet} 
+Atanassov K.
+\newblock Intuitionistic \textit{L}-fuzzy sets.
+\newblock {\em Fuzzy Sets and Systems}, 20:87$\sim$96, 1986.
+
+
+
+
+
+
+\bibitem{Sankal96RoughnessofFuzzy}
+ Banerjee M, Pal S.~K.                                        
+\newblock Roughness of fuzzy set.                             %title
+\newblock {\em Information Sciences}, 93:235$\sim$246, 1996. 
+
+
+
+\bibitem{Biswas}
+ Biswas R.
+\newblock On rough sets and fuzzy rough sets.
+\newblock {\em Bulletin of the Polish Academy of Sciences,Mathematics},
+  42:345$\sim$349, 1994.
+
+
+
+
+\end{thebibliography}
+
+%=============================
+\vspace{2em}
+\begin{center}
+ \textbf{\Large      }\\[2em]
+
+ HUANG Zheng-hua \\[0.5em]
+ (~{\small \textit{School of Mathematics and Statistics, Wuhan University, Wuhan 430072, Hubei, P.R.China}~})
+\end{center}
+
+\vspace{0.5cm}
+\noindent\textbf{Abstract}: This is a abstract.
+
+ \noindent\textbf{Key words}:  \LaTeX{}; \TeX{}; $\mathbb{C}$\!\TeX{}
+
+
+%====================================
+\clearpage
+
+
+\end{document}
+
